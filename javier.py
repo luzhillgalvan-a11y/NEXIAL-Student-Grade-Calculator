@@ -8,7 +8,7 @@ def calculate_final_grade(first_exam, second_exam, final_exam):
         Finally the program will return the result of the final grade or False if the grades on
         any exam was invalid
     '''
-    if validate_grades(first_exam, second_exam, final_exam) == True:
+    if all(0 <= grade <= 10 for grade in [first_exam, second_exam, final_exam]):
         final_grade = (0.4 * first_exam) + (0.4 * second_exam) + (0.2 * final_exam)
         return final_grade
     else:
