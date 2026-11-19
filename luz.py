@@ -10,8 +10,8 @@ def manage_student_data() -> list[dict]:
     total = int(input("Number of students: "))
 
     for i in range(total):
-        print("\nStudent", i + 1)
-        name = input("Student name: ").strip()
+        print("Student", i + 1)
+        name = input("Student name: ")
         theory = input("Theory grade: ")
         practical = input("Practical grade: ")
         assignments = input("Assignments grade: ")
@@ -27,10 +27,10 @@ def manage_student_data() -> list[dict]:
         students.append(student)
         print("Student added successfully:", name)
 
-    # Return all collected students
+    # Return students' information
     return students
 
 
 if __name__ == "__main__":
     students = manage_student_data()
-    print("\nStudent list:", students)
+    print("Student list:", students)
