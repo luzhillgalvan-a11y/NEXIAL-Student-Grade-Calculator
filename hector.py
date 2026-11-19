@@ -1,7 +1,7 @@
 
 
 from luz import manage_student_data
-from jonas import validate_student_data
+from jonas import grade_validation
 from javier import calculate_final_grade
 
 
@@ -15,7 +15,11 @@ def evaluate_student_performance(students: list[dict]) -> list[dict]:
     """
     results = []
     for student in students:
-        final_grade = calculate_final_grade(student["grades"])
+        final_grade = calculate_final_grade(
+    student["theory"],
+    student["practical"],
+    student["assignments"]
+)
         if final_grade >= 9:
             category = "Excellent"
         elif final_grade >= 7:
